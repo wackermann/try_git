@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
 </head>
 <body>
+    <#include "menu.ftl">
     <#include "header.ftl">
 
-    <main>
+    <main class="container content-wrapper">
         <h1>${content.title}</h1>
         <#if content.date??>
             <p><em>Published on: ${content.date?string("MMMM dd, yyyy")}</em></p>

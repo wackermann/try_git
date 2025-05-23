@@ -1,64 +1,147 @@
+/* Global Reset & Base */
 body {
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif; /* Example: Using Open Sans */
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #F5F5F5; /* Light beige/cream for overall page background */
     color: #333;
 }
 
-header, footer {
-    background-color: #333;
-    color: #fff;
-    padding: 1em 0;
-    text-align: center;
+/* Import Google Font (Example: Open Sans and Lato) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+/* Main Navigation (Bootstrap Overrides) */
+.navbar-default {
+    background-color: #5D4037; /* Earthy brown for navbar */
+    border-color: #4E342E; /* Slightly darker brown for border */
+}
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+    color: #FFFFFF; /* White text for navbar links */
+    font-family: 'Lato', sans-serif; /* Lato for nav text */
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav > li > a:hover {
+    color: #A5D6A7; /* Light green for hover */
 }
 
-header a, footer a {
-    color: #fff;
+/* Page Header (for titles like "Trails") */
+.page-header {
+    border-bottom: 1px solid #D7CCC8; /* Lighter brown for rule */
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+}
+.page-header h1 {
+    font-family: 'Lato', sans-serif; /* Lato for main page titles */
+    color: #2E7D32; /* Deep forest green */
+    font-weight: 700;
+}
+
+/* Content Wrapper & Main Area */
+.content-wrapper {
+    background-color: #FFFFFF; /* White for main content area background */
+    padding: 30px;
+    margin-top: 20px; /* Adjust if using fixed-top navbar to avoid overlap */
+    margin-bottom: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+/* Typography within content */
+.content-wrapper h1, .content-wrapper h2, .content-wrapper h3,
+.content-wrapper h4, .content-wrapper h5, .content-wrapper h6 {
+    font-family: 'Lato', sans-serif; /* Lato for content headings */
+    color: #5D4037; /* Earthy brown for headings */
+}
+.content-wrapper h1 { /* Specifically for post titles on index page if needed */
+    font-size: 2em;
+    color: #2E7D32; /* Forest green for trail titles */
+    margin-bottom: 0.5em;
+}
+.content-wrapper article p, .content-wrapper p {
+    font-size: 1rem;
+    margin-bottom: 1em;
+    color: #424242; /* Dark grey for text, softer than pure black */
+}
+.content-wrapper a {
+    color: #2E7D32; /* Forest green for links */
     text-decoration: none;
-    margin: 0 10px;
+}
+.content-wrapper a:hover {
+    text-decoration: underline;
 }
 
-header nav {
-    padding: 10px;
-}
-
-main {
-    width: 80%;
-    margin: 20px auto;
+/* Trail Item Styling (for index.ftl) */
+.trail-item {
+    background-color: #FCFCFC; /* Very light grey for card background */
+    border: 1px solid #E0E0E0;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-article {
     margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.trail-item h1 a { /* Title of the trail in the list */
+    color: #2E7D32; /* Forest green */
+    text-decoration: none;
+}
+.trail-item h1 a:hover {
+    text-decoration: underline;
+}
+.trail-item .trail-date {
+    font-size: 0.9em;
+    color: #757575; /* Medium grey for date */
+    margin-bottom: 10px;
+}
+.trail-item .trail-summary {
+    color: #616161; /* Slightly lighter grey for summary */
 }
 
-h1, h2, h3 {
-    color: #333;
-}
 
+/* Map Container */
 .map-container {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #D7CCC8; /* Lighter brown border */
+    background-color: #F5F5F5; /* Light beige/cream for map container background */
+    border-radius: 4px;
 }
-
 .map-container h2 {
     margin-top: 0;
+    font-family: 'Lato', sans-serif;
+    color: #5D4037; /* Earthy brown */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D7CCC8;
 }
 
-/* Responsive iframe for maps */
-.map-container iframe {
-    max-width: 100%;
-    border: 1px solid #ccc;
+/* Footer */
+footer {
+    background-color: #5D4037; /* Earthy brown for footer */
+    color: #FFFFFF; /* White text */
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px; /* Ensure space before footer */
+}
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+footer a {
+    color: #A5D6A7; /* Light green for footer links */
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
 }
 
 hr {
     border: 0;
     height: 1px;
-    background: #ddd;
+    background: #D7CCC8; /* Lighter brown for horizontal rules */
+    margin: 30px 0;
+}
+
+/* Utility classes (if needed) */
+.text-center {
+    text-align: center;
 }
