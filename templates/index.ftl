@@ -3,9 +3,9 @@
 	<#include "menu.ftl">
 
 	<div class="page-header">
-		<h1>Blog</h1>
+		<h1>Trails</h1>
 	</div>
-	<#list posts as post>
+	<#list db.getPublishedContent("trail") as post>
   		<#if (post.status == "published")>
   			<a href="${post.uri}"><h1>${post.title}</h1></a>
   			<p>${post.date?string("dd MMMM yyyy")}</p>
@@ -15,6 +15,4 @@
 	
 	<hr />
 	
-	<p>Older posts are available in the <a href="${content.rootpath}${config.archive_file}">archive</a>.</p>
-
 <#include "footer.ftl">

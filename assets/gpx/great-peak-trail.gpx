@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Jules AI Agent" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+ <metadata>
+   <name>Great Peak Trail (Sample)</name>
+   <desc>A sample GPX track for demonstration purposes.</desc>
+ </metadata>
+ <trk>
+   <name>Sample Trail Loop</name>
+   <trkseg>
+     <trkpt lat="51.5000" lon="-0.1200"><ele>10</ele><time>2023-01-01T10:00:00Z</time></trkpt>
+     <trkpt lat="51.5005" lon="-0.1210"><ele>12</ele><time>2023-01-01T10:05:00Z</time></trkpt>
+     <trkpt lat="51.5010" lon="-0.1205"><ele>15</ele><time>2023-01-01T10:10:00Z</time></trkpt>
+     <trkpt lat="51.5000" lon="-0.1200"><ele>10</ele><time>2023-01-01T10:15:00Z</time></trkpt>
+   </trkseg>
+ </trk>
+</gpx>

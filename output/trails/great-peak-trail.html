@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Great Peak Trail</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
 </head>
 <body>
 <header>
@@ -33,7 +34,8 @@
 
             <div class="map-container">
                 <h2>Trail Map</h2>
-                <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.1291%2C51.5068%2C-0.1231%2C51.5092&layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=51.5080&mlon=-0.1261#map=17/51.5080/-0.1261">View Larger Map</a></small>
+                <div id="mapid" style="height: 500px; width: 100%;"></div>
+                <p><a href="../gpx/great-peak-trail.gpx" download>Download GPX Track</a></p>
             </div>
     </main>
 
@@ -42,5 +44,30 @@
     <p>&copy; 2025 Hiking Trails Adventures</p>
     <p>Powered by <a href="https://jbake.org">JBake</a></p>
 </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/2.2.0/gpx.min.js"></script>
+    <script type="text/javascript">
+        // Initialize the map
+        var map = L.map('mapid');
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // GPX track
+        var gpxFile = "../gpx/great-peak-trail.gpx";
+
+        new L.GPX(gpxFile, {
+            async: true,
+            marker_options: {
+                startIconUrl: '../assets/img/pin-icon-start.png', // Assuming a start pin icon
+                endIconUrl: '../assets/img/pin-icon-end.png',     // Assuming an end pin icon
+                shadowUrl: '../assets/img/pin-shadow.png'       // Assuming a shadow for pins
+            }
+        }).on('loaded', function(e) {
+            map.fitBounds(e.target.getBounds());
+        }).addTo(map);
+    </script>
 </body>
 </html>
